@@ -1,4 +1,4 @@
-# TheAdmin Demo
+# Profa Frontend Repository
 
 This directory includes all the demo and pages of TheAdmin template. While we suggest you to visit the online demo, you can run a server here and browse the demo file. Also, you have access to source files (SCSS and Javascript) to modify and create your own template.
 
