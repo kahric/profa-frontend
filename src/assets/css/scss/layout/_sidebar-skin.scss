@@ -208,7 +208,7 @@
 //
 .sidebar {
   .menu:not(.menu-bordery) > .menu-item.active > .menu-link {
-    background-color: $color-primary;
+    background-color: $active-menu-item-color;
   }
 
   &.sidebar-dark {

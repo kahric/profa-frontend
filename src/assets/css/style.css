@@ -321,8 +321,7 @@
 }
 
 body .topbar + .main-container, body .topbar + main {
-  padding-top: 120px;
-  box-shadow: 0;
+  padding-top: 140px;
 }
 
 @media (min-width: 992px) {
@@ -342,7 +341,7 @@ body .topbar + .main-container, body .topbar + main {
 }
 
 .topbar-bottom a:hover {
-  background-color: #eaeaea;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .topbar-bottom a {
@@ -350,24 +349,24 @@ body .topbar + .main-container, body .topbar + main {
   padding: 0 10px;
   height: 100%;
   text-align: center;
-  color: #3b3b3b;
+  color: #fff;
   font-weight: 500;
   border-radius: 3px;
 }
 
 .topbar-bottom {
-  padding: 5px 0;
   display: flex;
+  padding: 5px 0;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   position: absolute;
   top: 100%;
   left: 0;
-  border-top: 1px solid rgba(224, 224, 224, 0.22);
-  border-bottom: 1px solid rgba(224, 224, 224, 0.61);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid #011A27;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.04);
-  background-color: #fbfbfb;
+  background-color: #063852;
 }
 
 @media (min-width: 992px) {
@@ -380,16 +379,20 @@ body .topbar + .main-container, body .topbar + main {
   line-height: 120%;
 }
 
+.profile-info p {
+  margin: 0;
+}
+
 span.logo {
   text-align: center;
 }
 
 .sidebar-iconic .menu-item {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 .sidebar-iconic .menu-item:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 .topbar .lookup-circle {
@@ -472,7 +475,7 @@ span.logo {
 
 .kurs-card-cijena {
   display: inline-block;
-  color: #faa64b;
+  color: #FF0038;
   font-size: 16px;
   font-weight: 500;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
@@ -574,6 +577,43 @@ span.logo {
 
 .kurs-ocjena .prazna:before {
   content: "\f006";
+}
+
+@media (max-width: 991px) {
+  .topbar {
+    background-color: #011A27;
+  }
+}
+
+@media (max-width: 991px) {
+  .topbar .lookup::before {
+    color: #FFF;
+  }
+}
+
+@media (max-width: 991px) {
+  .lookup-circle input {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #FFF;
+  }
+}
+
+@media (max-width: 991px) {
+  .lookup-circle input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+@media (max-width: 991px) {
+  .topbar input::placeholder {
+    color: rgba(255, 255, 255, 0.69);
+  }
+}
+
+@media (max-width: 991px) {
+  .topbar-btn.sidebar-toggler {
+    color: #FFF !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

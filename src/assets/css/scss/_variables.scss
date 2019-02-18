@@ -123,7 +123,7 @@ $color-gray:             $gray-600 !default;
 $color-light:            $gray-100 !default;
 
 // Context colors
-$color-primary:          $profa_zelena !default; // #33cabb !default;
+$color-primary:          #FF0038 !default; // #33cabb !default;
 $color-secondary:        #e4e7ea !default;
 $color-success:          $color-green !default; // 46be8a
 $color-info:             $color-blue !default;
@@ -253,9 +253,14 @@ $menu-submenu-height:         32px;
 $menu-link-items-margin-x:    8px  !default;
 $menu-light-submenu-bg:       #f7f9fa !default;
 
+$plava-1: #011A27 !default;
+$plava-2: #063852 !default;
+
 // Sidebar
-$sidebar-header-bg:           $profa_smedja !default;
-$sidebar-dark-bg:             $profa_crna !default;
+$sidebar-header-bg:           #FF0038 !default;
+$sidebar-header-bg-2:         #79FDE6 !default;
+$active-menu-item-color:      $plava-2 !default;
+$sidebar-dark-bg:             $plava-1 !default;
 $sidebar-dark-submenu-bg:     $profa_crna_svjetlija !default;
 $sidebar-darker-bg:           #242a33 !default;//21252d
 $sidebar-darker-submenu-bg:   #2b323b !default;//2b303b

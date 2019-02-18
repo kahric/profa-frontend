@@ -49,36 +49,3 @@ $pretraga_input.on('blur', function () {
        
    });
 })(jQuery); 
-
-
-app.ready(function() {
-        //
-        // Typeahead
-        //
-        var countries = new Bloodhound({
-          datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-          queryTokenizer: Bloodhound.tokenizers.whitespace,
-          prefetch: {
-            url: '../assets/countries.json',
-            filter: function(list) {
-              return $.map(list, function(cityname) {
-                return { name: cityname }; });
-            }
-          }
-        });
-        countries.initialize();
-
-        $('#sample-typeahead').tagsinput({
-          typeaheadjs: {
-            name: 'countries',
-            displayKey: 'name',
-            valueKey: 'name',
-            source: countries.ttAdapter()
-          }
-        });
-    
-    $("#clanarina").change(function(){
-        $("#posao-select").css('display', $(this).val() === 'premium' ? 'block' : 'none');
-    });
-
-});

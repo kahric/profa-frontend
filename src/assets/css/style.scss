@@ -1,5 +1,5 @@
 @import "scss/variables";
-
+@import "scss/mixins/breakpoints";
  
 
 
@@ -458,8 +458,7 @@ $screen-xl-min: 1200px;
 }
 
 body .topbar+.main-container, body .topbar+main {
-    padding-top: 120px;
-    box-shadow: 0;
+    padding-top: 140px;
     @include lg {
         box-shadow: 4px 0 5px rgba(0,0,0,0.08);
         padding-top: 64px;
@@ -475,38 +474,41 @@ body .topbar+.main-container, body .topbar+main {
     padding-top: 3px;
 }
 .topbar-bottom a:hover {
-    background-color: #eaeaea;
+    background-color: rgba(255,255,255,0.2);
 }
 .topbar-bottom a {
     display: block;
     padding: 0 10px;
     height: 100%;
     text-align: center;
-    color: #3b3b3b;
+    color: #fff;
     font-weight: 500;
     border-radius: 3px;
 }
 
 .topbar-bottom {
-    padding: 5px 0;
     display: flex;
+    padding: 5px 0;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
-    border-top: 1px solid rgba(224, 224, 224, 0.22);
-    border-bottom: 1px solid rgba(224, 224, 224, 0.61);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid $plava-1;
     box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
-    background-color: #fbfbfb;
-    @include lg {
-       display: none;
+    background-color: $plava-2;
+    @include media-up(lg) {
+        display: none;
     }
 }
 
 .profile-info {
     line-height: 120%;
+}
+.profile-info p {
+    margin: 0;
 }
 
 span.logo {
@@ -514,10 +516,10 @@ span.logo {
 }
 
 .sidebar-iconic .menu-item {
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 .sidebar-iconic .menu-item:last-child {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 .topbar .lookup-circle {
@@ -586,7 +588,7 @@ span.logo {
 }
 .kurs-card-cijena {
     display: inline-block;
-    color: $color-warning; 
+    color: $color-primary; 
     font-size: 16px;
     font-weight: 500;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
@@ -681,4 +683,39 @@ span.logo {
 }
 .kurs-ocjena .prazna:before {
     content: "\f006"
+}
+
+.topbar {
+    @include media-down(md) {
+        background-color: $plava-1;
+
+    }
+}
+.topbar .lookup::before {
+    @include media-down(md) {
+        color: #FFF;
+    }
+}
+.lookup-circle input
+{
+    @include media-down(md) {
+        background-color: rgba(255, 255, 255, 0.07);
+        color: #FFF;
+    }
+}
+.lookup-circle input:focus
+{
+    @include media-down(md) {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+}
+.topbar input::placeholder {
+    @include media-down(md) {
+        color: rgba(255, 255, 255, 0.69);
+    }
+}
+.topbar-btn.sidebar-toggler {
+    @include media-down(md) {
+        color: #FFF !important;
+    }
 }
