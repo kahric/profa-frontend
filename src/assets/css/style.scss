@@ -620,11 +620,11 @@ span.logo {
     }
 }
 
-.kurs-card .card-hover {
+.card-hover {
     transition: all 0.5s ease;
     opacity: 0;
     display: none;
-    @include lg {
+    @include media-up(lg) {
         display: block;
     }
 }

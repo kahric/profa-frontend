@@ -240,7 +240,10 @@
             <div class="header-action">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#postavke" role="tab">Postavke</a>
+                        <a class="nav-link" data-toggle="tab" href="#postavke" role="tab">Postavke</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active kartice-link" data-toggle="tab" href="#kartice" role="tab">Teorija/Kartice</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pitanja-link" data-toggle="tab" href="#pitanja" role="tab">Pitanja</a>
@@ -251,7 +254,7 @@
 
         <div class="main-content">
             <div class="tab-content form-type-combine">
-                <div class="tab-pane active" id="postavke" role="tabpanel">
+                <div class="tab-pane" id="postavke" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
@@ -291,6 +294,35 @@
                     </div>
                 </div>
 
+                <div class="tab-pane active" id="kartice" role="tabpanel">
+                    <div class="col-12">
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Trenutno nema dodanih kartica za učenje!</strong> Pratiteljima kursa će se na karticama prikazivati teorija za zadanu oblast. Za novu karticu, pritisnite kružić koji se nalazi u donjem desnom uglu.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 d-flex align-items-stretch" data-card-id="1">
+                            <div class="card card-bordered kurs-card w-100">
+                                <div class="card-body text-center">
+                                    <p class="m-0 py-5 card-content">Credibly harness multidisciplinary ideas via alternative e-commerce. Intrinsicly transition interdependent best practices before resource sucking outsourcing.</p>
+                                </div>
+                                <footer class="card-footer d-flex d-lg-none">
+                                    <button class="btn btn-info kurs-card-button edit_card" data-id="1">Izmjeni karticu</button>
+                                    <button class="btn btn-primary kurs-card-button remove_card" data-id="1">Izbriši karticu</button>
+                                </footer>
+                                <div class="card-hover d-flex align-items-center">
+                                    <div class="card-hover-centered w-100">
+                                        <a href="#" class="edit_card" data-id="1">Izmjeni karticu</a>
+                                        <a href="#" class="remove_card" data-id="1">Izbriši karticu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-pane" id="pitanja" role="tabpanel">
                     <div class="col-12">
                         <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -318,6 +350,12 @@
                 <li><a class="btn btn-float btn-sm btn-info" href="#" title="Add new music" data-provide="tooltip" data-placement="left"><i class="fa fa-music"></i></a></li>
                 <li><a class="btn btn-float btn-sm btn-info" href="#" title="Add new video" data-provide="tooltip" data-placement="left"><i class="fa fa-video-camera"></i></a></li>
             </ul>
+        </div>
+
+        <div class="fab fab-fixed" id="kartice-fab" style="display: block;">
+            <button class="btn btn-float btn-primary" data-toggle="modal" data-target="#card-modal">
+                <i class="fab-icon-default ti-plus"></i>
+            </button>
         </div>
 
         <!-- Footer -->
@@ -358,6 +396,29 @@
     <!-- END Global quickview -->
 
 
+    <!-- Kartice modal -->
+    <div class="modal fade" id="card-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="card-modal-label">Dodaj novu karticu</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="card-modal-text" cols="30" rows="6" class="form-control" placeholder="U ovu kutijicu upisujete sadržaj jedne kartice. Sadržaj kartice bi trebao da se sastoji od dvije do tri rečenice sa fokusom na određenu temu." style="font-size: 17px;"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Zatvori</button>
+                    <button type="button" class="btn btn-bold btn-pure btn-primary" id="card-modal-button" data-action="add">Dodaj karticu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Kartice modal -->
+
+
 
     <!-- Scripts -->
     <script src="assets/js/core.min.js"></script>
@@ -365,12 +426,52 @@
     <script src="assets/js/script.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
+        var lang = {
+            modal_edit_naslov: "Izmjeni postojeću karticu",
+            modal_edit_dugme: "Izmjeni karticu",
+            modal_add_naslov: "Dodaj novu karticu",
+            modal_add_dugme: "Dodaj karticu"
+        };
+
         $("#next-step-1").click(function() {
             $(".pitanja-link").click();
         });
 
         $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
             $("#pitanja-fab").css('display', $(e.target).hasClass('pitanja-link') ? 'block' : 'none');
+            $("#kartice-fab").css('display', $(e.target).hasClass('kartice-link') ? 'block' : 'none');
+        });
+
+        $(document.body).on('click', '.remove_card', function(e) {
+            var card_id = $(this).data('id');
+            $("div[data-card-id=" + card_id + "]").remove();
+        });
+        $(document.body).on('click', '.edit_card', function(e) {
+            var card_id = $(this).data('id');
+            var content = $("div[data-card-id=" + card_id + "] .card-content").text();
+            $("#card-modal-label").html(lang.modal_edit_naslov);
+            $("#card-modal-button").html(lang.modal_edit_dugme);
+            $("#card-modal-button").attr("data-action", "edit");
+            $("#card-modal-button").attr('data-id', card_id);
+            $("#card-modal-text").val(content);
+            $("#card-modal").modal();
+        });
+
+        $("#card-modal").on('hidden.bs.modal', function() {
+            $("#card-modal-label").html(lang.modal_add_naslov);
+            $("#card-modal-button").html(lang.modal_add_dugme);
+            $("#card-modal-text").val('');
+            $("#card-modal-button").attr('data-action', 'add')
+            $("#card-modal-button").removeAttr('data-id')
+        });
+
+        $("#card-modal-button").click(function(){
+            var content = $("#card-modal-text").val();
+            var action = $(this).data('action');
+            if(action === 'edit') {
+                var card_id = $(this).data('id');
+                $("div[data-card-id=" + card_id + "] .card-content").html(content);
+            }
         });
 
     </script>

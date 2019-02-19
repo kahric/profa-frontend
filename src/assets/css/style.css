@@ -506,14 +506,14 @@ span.logo {
   }
 }
 
-.kurs-card .card-hover {
+.card-hover {
   transition: all 0.5s ease;
   opacity: 0;
   display: none;
 }
 
 @media (min-width: 992px) {
-  .kurs-card .card-hover {
+  .card-hover {
     display: block;
   }
 }
