@@ -1,0 +1,19 @@
+<script id="kartica-template" type="text/html">
+    <div class="col-xl-3 d-flex align-items-stretch" data-card-id="{{card_id}}">
+        <div class="card card-bordered kurs-card w-100">
+            <div class="card-body text-center d-flex align-items-center justify-content-center p-0">
+                <p class="m-0 py-4 card-content">{{content}}</p>
+            </div>
+            <footer class="card-footer d-flex d-lg-none">
+                <button class="btn btn-info kurs-card-button edit_card" data-id="{{card_id}}">Izmjeni karticu</button>
+                <button class="btn btn-primary kurs-card-button remove_card" data-id="{{card_id}}">Izbriši karticu</button>
+            </footer>
+            <div class="card-hover align-items-center">
+                <div class="card-hover-centered w-100">
+                    <a href="#" class="edit_card" data-id="{{card_id}}">Izmjenite karticu</a>
+                    <a href="#" class="remove_card" data-id="{{card_id}}">Izbrišite karticu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

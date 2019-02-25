@@ -490,6 +490,12 @@ span.logo {
   height: 100%;
 }
 
+@media (max-width: 1199px) {
+  .card-hover {
+    display: none;
+  }
+}
+
 .kurs-card .card-header,
 .kurs-card .card-body {
   transition: all 0.5s ease;
@@ -509,17 +515,17 @@ span.logo {
 .card-hover {
   transition: all 0.5s ease;
   opacity: 0;
-  display: none;
-}
-
-@media (min-width: 992px) {
-  .card-hover {
-    display: block;
-  }
+  display: flex;
 }
 
 .kurs-card:hover .card-hover {
   opacity: 1;
+}
+
+@media (max-width: 1199px) {
+  .kurs-card:hover .card-hover {
+    opacity: 0;
+  }
 }
 
 .kurs-card .card-hover a:first-child {
@@ -577,6 +583,14 @@ span.logo {
 
 .kurs-ocjena .prazna:before {
   content: "\f006";
+}
+
+.novi-kurs-card {
+  cursor: pointer;
+}
+
+.novi-kurs-card:hover {
+  background-color: #eee;
 }
 
 @media (max-width: 991px) {

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,7 +8,7 @@
     <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
     <meta name="keywords" content="blank, starter">
 
-    <title>Kreiraj kurs &mdash; Profa</title>
+    <title>Novi kurs &mdash; Profa</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
@@ -16,6 +17,7 @@
     <link href="assets/css/core.min.css" rel="stylesheet">
     <link href="assets/css/app.min.css" rel="stylesheet">
     <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/vendor/jquery-confirm/jquery-confirm.min.css" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -233,136 +235,187 @@
         <header class="header mb-0">
             <div class="header-info">
                 <div class="left">
-                    <h2 class="header-title">Kreiraj <strong>novi kurs</strong></h2>
+                    <h2 class="header-title">Dodavanje <strong>novog kursa</strong></h2>
                 </div>
-            </div>
-
-            <div class="header-action">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#postavke" role="tab">Postavke</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active kartice-link" data-toggle="tab" href="#kartice" role="tab">Teorija/Kartice</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pitanja-link" data-toggle="tab" href="#pitanja" role="tab">Pitanja</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#pitanja" role="tab">Spojnice</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#pitanja" role="tab">Pitanja</a>
-                    </li>
-                </ul>
             </div>
         </header>
-
         <div class="main-content">
-            <div class="tab-content form-type-combine">
-                <div class="tab-pane" id="postavke" role="tabpanel">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Podešavanje kursa
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="input-placeholder">Ime kursa</label>
-                                <input type="text" class="form-control" placeholder="Ime kursa koje će biti prikazano na Profi" id="input-placeholder">
-                            </div>
-                            <div class="input-group form-group-sm">
-                                <div class="input-group-input">
-                                    <label>Cijena kursa</label>
-                                    <input type="number" class="form-control" placeholder="Cijena kursa u Profa Coinima" aria-describedby="basic-addon1">
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-diamond"></i></span>
-                                </div>
-                            </div>
-                            <div class="form-group form-type-combine">
-                                <label>Kategorija</label>
+            <div class="card">
+                <div class="card-body">
+                    <form data-provide="wizard" novalidate="true" data-on-next="callbackOnNext" data-on-previous="callbackOnPrevious" data-on-finish="callbackOnFinish">
+                        <ul class="nav nav-process nav-process-circle">
+                            <li class="nav-item">
+                                <span class="nav-title">Info</span>
+                                <a class="nav-link" data-toggle="tab" href="#wizard-validate-1"></a>
+                            </li>
 
-                                <select class="form-control" data-provide="selectpicker" title="Pretraži kategorije..." data-live-search="true">
-                                    <option>Informatika</option>
-                                    <option>Matematika</option>
-                                    <option>Psihologija</option>
-                                    <option>Fizika</option>
-                                    <option>Sport</option>
-                                </select>
-                            </div>
+                            <li class="nav-item">
+                                <span class="nav-title">Teorija</span>
+                                <a class="nav-link" data-toggle="tab" href="#wizard-validate-2"></a>
+                            </li>
 
-                            <div class="text-right">
-                                <button class="btn btn-info" id="next-step-1">Sljedeći korak</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <li class="nav-item">
+                                <span class="nav-title">Pitanja</span>
+                                <a class="nav-link" data-toggle="tab" href="#wizard-validate-3"></a>
+                            </li>
 
-                <div class="tab-pane active" id="kartice" role="tabpanel">
-                    <div class="col-12">
-                        <div class="alert alert-info alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <strong>Trenutno nema dodanih kartica za učenje!</strong> Pratiteljima kursa će se na karticama prikazivati teorija za zadanu oblast. Za novu karticu, pritisnite kružić koji se nalazi u donjem desnom uglu.
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 d-flex align-items-stretch" data-card-id="1">
-                            <div class="card card-bordered kurs-card w-100">
-                                <div class="card-body text-center">
-                                    <p class="m-0 py-5 card-content">Credibly harness multidisciplinary ideas via alternative e-commerce. Intrinsicly transition interdependent best practices before resource sucking outsourcing.</p>
+                            <li class="nav-item">
+                                <span class="nav-title">Spremanje</span>
+                                <a class="nav-link" data-toggle="tab" href="#wizard-validate-4"></a>
+                            </li>
+                        </ul>
+
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="wizard-validate-1">
+                                <br><br>
+                                <p class="text-center fs-35 text-muted">Osnovne informacije o <strong class="text-primary">kursu</strong></p>
+                                <p class="text-center text-gray">Upišite razmuljivo ime za vaš kurs, cijenu, te izaberite sliku i kategoriju u koju će vaš novi kurs biti svrstan.</p>
+                                <hr class="w-100px">
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="input-placeholder">Ime kursa</label>
+                                    <input type="text" class="form-control" placeholder="Ime kursa koje će biti prikazano na Profi" id="input-placeholder" required>
                                 </div>
-                                <footer class="card-footer d-flex d-lg-none">
-                                    <button class="btn btn-info kurs-card-button edit_card" data-id="1">Izmjeni karticu</button>
-                                    <button class="btn btn-primary kurs-card-button remove_card" data-id="1">Izbriši karticu</button>
-                                </footer>
-                                <div class="card-hover align-items-center">
-                                    <div class="card-hover-centered w-100">
-                                        <a href="#" class="edit_card" data-id="1">Izmjeni karticu</a>
-                                        <a href="#" class="remove_card" data-id="1">Izbriši karticu</a>
+                                <label>Cijena kursa</label>
+
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="Cijena kursa u Profa Novčićima" aria-describedby="basic-addon1" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-diamond"></i></span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label>Kategorija</label>
+
+                                    <select class="form-control" data-provide="selectpicker" title="Pretraži kategorije..." data-live-search="true" required>
+                                        <option>Informatika</option>
+                                        <option>Matematika</option>
+                                        <option>Psihologija</option>
+                                        <option>Fizika</option>
+                                        <option>Sport</option>
+                                    </select>
+                                </div>
+                                <label>Naslovna slika kursa</label>
+                                <div class="form-group file-group">
+                                    <input type="text" class="form-control file-value file-browser" placeholder="Pronađite sliku..." readonly>
+                                    <input type="file" required>
+                                </div>
+                            </div>
+
+
+
+                            <div class="tab-pane fade" id="wizard-validate-2">
+                                <br><br>
+                                <p class="text-center fs-35 text-muted">Dodajte <strong class="text-primary">teorijske kartice</strong> za učenje</p>
+                                <p class="text-center text-gray">Koristeći kartice, pratitelji kursa će na brz i jednostavan način moći upamtiti teoriju vezanu za vaš kurs. Broj kartica nije ograničen, te je preporučljivo da ih dodate što više moguće, kako bi sve oblasti u kursu bile teoretski pokrivene.</p>
+                                <hr class="w-100px">
+                                <br>
+
+                                <div class="row" id="kartice-row">
+                                    <div class="col-xl-3 d-flex align-items-stretch" data-toggle="modal" data-target="#card-modal">
+                                        <div class="card card-bordered novi-kurs-card w-100">
+                                            <div class="card-body text-center d-flex align-items-center justify-content-center">
+                                                <div>
+                                                    <p class="m-0 mb-1 pt-3 fs-30 card-content font-weight-bold">
+                                                        <i class="fa fa-plus-circle"></i>
+                                                    </p>
+                                                    <p class="m-0 pb-3 card-content font-weight-bold">
+                                                        Nova kartica
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="pitanja" role="tabpanel">
-                    <div class="col-12">
-                        <div class="alert alert-info alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <strong>Trenutno nema dodanih pitanja!</strong> Za dodavanje pitanja koristite kružić koji se nalazi u donjem desnom uglu ekrana.
-                        </div>
-                    </div>
-                </div>
 
+
+
+                            <div class="tab-pane fade" id="wizard-validate-3" data-provide="validation">
+                                <br><br>
+                                <p class="text-center fs-35 text-muted">Dodajte <strong class="text-primary">ispitna pitanja</strong></p>
+                                <p class="text-center text-gray">Na Profa kursevima postoje 3 vrste pitanja, a to su: Standardni oblik pitanja sa više odgovora, pitanja u vidu dopunjavanja rečenice, i pitanja na princip spajanja tačnih odgovora.</p>
+                                <hr class="w-100px">
+                                <br>
+
+                                <div class="nav-tabs">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-justified nav-tabs-primary">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#home-left">Pitanja</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#profile-left">Dopuni rečenicu</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#messages-left">Spojnice</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade active show" id="home-left">
+                                            Enthusiastically integrate business content for standardized partnerships. Intrinsicly envisioneer focused resources for flexible imperatives. Holisticly e-enable 2.0 infomediaries rather than user friendly resources. Holisticly enable bleeding-edge convergence whereas premium potentialities. Monotonectally myocardinate multimedia based deliverables vis-a-vis.
+                                        </div>
+                                        <div class="tab-pane fade" id="profile-left">
+                                            Quickly utilize synergistic deliverables via enabled synergy. Rapidiously create optimal solutions rather than 24/7 e-services. Continually reinvent performance based markets before open-source testing procedures. Dynamically fabricate process-centric content for cross functional relationships. Proactively build clicks-and-mortar interfaces.
+                                        </div>
+                                        <div class="tab-pane fade" id="messages-left">
+                                            Continually procrastinate one-to-one potentialities without market-driven schemas. Rapidiously coordinate impactful growth strategies and progressive functionalities. Holisticly deliver diverse technologies with frictionless web services. Authoritatively envisioneer technically sound growth strategies for goal-oriented portals. Appropriately empower bleeding-edge best.
+                                        </div>
+                                        <div class="tab-pane fade" id="settings-left">
+                                            Collaboratively engineer revolutionary ideas with emerging content. Objectively envisioneer installed base total linkage via mission-critical functionalities. Synergistically pursue alternative web-readiness via excellent technology. Globally reinvent effective infomediaries and cross functional users. Phosfluorescently repurpose reliable data through.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="tab-pane fade" id="wizard-validate-4">
+                                <br><br>
+                                <p class="text-center fs-35 text-muted">Ready to <strong class="text-primary">go?</strong></p>
+                                <p class="text-center text-gray">Rapidiously facilitate web-enabled products through innovative collaboration.</p>
+                                <hr class="w-100px">
+                                <br>
+
+                                <div class="px-20">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-sm-4">Username</label>
+                                        <div class="form-control-plaintext col-sm-8">TheAdmin</div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-sm-4">Email</label>
+                                        <div class="form-control-plaintext col-sm-8">support@theadmin.io</div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-sm-4">Card number</label>
+                                        <div class="form-control-plaintext col-sm-8">xxxx-xxxx-xxxx-3648</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="flexbox">
+                            <button class="btn btn-secondary" data-wizard="prev" type="button">Nazad</button>
+                            <button class="btn btn-secondary" data-wizard="next" type="button">Dalje</button>
+                            <button class="btn btn-primary d-none" data-wizard="finish" type="submit">Spremi kurs</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
         </div>
         <!--/.main-content -->
 
-        <div class="fab fab-fixed" id="pitanja-fab" style="display: none;">
-            <button class="btn btn-float btn-primary" data-toggle="button">
-                <i class="fab-icon-default ti-plus"></i>
-                <i class="fab-icon-active ti-close"></i>
-            </button>
-
-            <ul class="fab-buttons">
-                <li><a class="btn btn-float btn-sm btn-info" href="#" title="Add new event" data-provide="tooltip" data-placement="left"><i class="fa fa-calendar"></i></a></li>
-                <li><a class="btn btn-float btn-sm btn-info" href="#" title="Add new music" data-provide="tooltip" data-placement="left"><i class="fa fa-music"></i></a></li>
-                <li><a class="btn btn-float btn-sm btn-info" href="#" title="Add new video" data-provide="tooltip" data-placement="left"><i class="fa fa-video-camera"></i></a></li>
-            </ul>
-        </div>
-
-        <div class="fab fab-fixed" id="kartice-fab" style="display: block;">
-            <button class="btn btn-float btn-primary" data-toggle="modal" data-target="#card-modal">
-                <i class="fab-icon-default ti-plus"></i>
-            </button>
-        </div>
 
         <!-- Footer -->
         <footer class="site-footer">
@@ -407,13 +460,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="card-modal-label">Dodaj novu karticu</h4>
+                    <h4 class="modal-title" id="card-modal-label">Dodavanje novu kartice</h4>
                     <button type="button" class="close" data-dismiss="modal">
                               <span aria-hidden="true">&times;</span>
                             </button>
                 </div>
                 <div class="modal-body">
-                    <textarea id="card-modal-text" cols="30" rows="6" class="form-control" placeholder="U ovu kutijicu upisujete sadržaj jedne kartice. Sadržaj kartice bi trebao da se sastoji od dvije do tri rečenice sa fokusom na određenu temu." style="font-size: 17px;"></textarea>
+                    <textarea id="card-modal-text" cols="30" rows="6" class="form-control" placeholder="U ovo polje upisujete sadržaj jedne kartice. Sadržaj kartice bi trebao da se sastoji od  najmanje dvije rečenice sa fokusom na određeni dio oblasti." style="font-size: 16px;"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Zatvori</button>
@@ -430,27 +483,39 @@
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script src="assets/vendor/mustache/mustache.min.js"></script>
+    <script src="assets/vendor/mustache/jquery.mustache.js"></script>
+    <script src="assets/vendor/jquery-confirm/jquery-confirm.min.js"></script>
     <script src="assets/js/custom.js"></script>
+
     <script>
         var lang = {
-            modal_edit_naslov: "Izmjeni postojeću karticu",
+            modal_edit_naslov: "Izmjena postojeće kartice",
             modal_edit_dugme: "Izmjeni karticu",
-            modal_add_naslov: "Dodaj novu karticu",
-            modal_add_dugme: "Dodaj karticu"
+            modal_add_naslov: "Dodavanje nove kartice",
+            modal_add_dugme: "Spremi karticu"
         };
 
-        $("#next-step-1").click(function() {
-            $(".pitanja-link").click();
-        });
-
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-            $("#pitanja-fab").css('display', $(e.target).hasClass('pitanja-link') ? 'block' : 'none');
-            $("#kartice-fab").css('display', $(e.target).hasClass('kartice-link') ? 'block' : 'none');
-        });
+        var new_id = 0;
 
         $(document.body).on('click', '.remove_card', function(e) {
             var card_id = $(this).data('id');
-            $("div[data-card-id=" + card_id + "]").remove();
+            $.confirm({
+                title: 'Izbrisati karticu?',
+                confirmButton: 'Da',
+                cancelButton: 'Odustani',
+                content: 'Da li ste sigurni da želite izbrisati ovu karticu? Kartica se neće moći vratiti.',
+                buttons: {
+                    izbrisi: {
+                        text: "Izbriši karticu",
+                        action: function() {
+                            $("div[data-card-id=" + card_id + "]").remove();
+                        }
+                    },
+                    odustani: function() {}
+                }
+            });
+
         });
         $(document.body).on('click', '.edit_card', function(e) {
             var card_id = $(this).data('id');
@@ -477,8 +542,38 @@
             if (action === 'edit') {
                 var card_id = $(this).data('id');
                 $("div[data-card-id=" + card_id + "] .card-content").html(content);
+                $("#card-modal").modal('hide');
+            } else {
+                new_id += 1;
+                var viewData = {
+                    content: content,
+                    card_id: new_id
+                };
+                if (content === '') {
+                    $.alert('Molimo Vas da unesete sadržaj kartice.');
+                } else {
+                    $.Mustache.load('./assets/templates/nova-kartica-template.htm').done(function() {
+                        $('#kartice-row').mustache('kartica-template', viewData);
+                    });
+                    $("#card-modal").modal('hide');
+                }
             }
+
         });
+
+        function callbackOnNext(tab, navigation, index) {
+            return false;
+        }
+
+
+        function callbackOnPrevious(tab, navigation, index) {
+            app.toast('Previous');
+        }
+
+
+        function callbackOnFinish(tab, navigation, index) {
+            app.toast('Finish');
+        }
 
     </script>
 </body>

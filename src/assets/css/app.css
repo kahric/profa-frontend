@@ -3366,7 +3366,7 @@ img {
 }
 
 .nav-process-circle .nav-item.complete .nav-link, .nav-process-circle .nav-item.complete .nav-link::before, .nav-process-circle .nav-item.processing .nav-link, .nav-process-circle .nav-item.processing .nav-link::before {
-  background-color: #dcfcfa;
+  background-color: #ffd2dc;
 }
 
 .nav-process-circle .nav-item.complete .nav-link::after, .nav-process-circle .nav-item.processing .nav-link::after {
@@ -13095,7 +13095,7 @@ select.form-control-lg:not([size]):not([multiple]) {
 }
 
 .switch input:checked ~ .switch-indicator {
-  background: #dcfcfa;
+  background: #ffd2dc;
 }
 
 .switch input:checked ~ .switch-indicator::after {
@@ -13146,7 +13146,7 @@ select.form-control-lg:not([size]):not([multiple]) {
 }
 
 .switch-border input:checked + .switch-indicator {
-  border-color: #dcfcfa;
+  border-color: #ffd2dc;
 }
 
 .switch-border input:checked + .switch-indicator::after {
@@ -19454,7 +19454,7 @@ ul.flexbox {
 }
 
 .bg-pale-primary {
-  background-color: #dcfcfa !important;
+  background-color: #ffd2dc !important;
 }
 
 .bg-pale-secondary {
@@ -19826,7 +19826,7 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .active.active-primary {
-  background-color: #dcfcfa !important;
+  background-color: #ffd2dc !important;
 }
 
 .active.active-secondary {
