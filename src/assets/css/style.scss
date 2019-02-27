@@ -627,6 +627,7 @@ span.logo {
     transition: all 0.5s ease;
     opacity: 0;
     display: flex;
+    flex-direction: column;
 }
 .kurs-card:hover .card-hover {
     opacity: 1;
@@ -729,4 +730,64 @@ span.logo {
     @include media-down(md) {
         color: #FFF !important;
     }
+}
+
+.wizard p.text-center.text-gray {
+    @include media-up(lg) {
+        padding: 0 15%;
+    }
+}
+
+.wizard-vrste-pitanja {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    @include media-up(lg) {
+        width: 450px;
+        margin: 0 auto;
+    }
+    
+    a {
+        border: 1px solid rgba(0, 0, 0, 0.23);
+        text-align: center;
+        position: relative;
+        width: 30%;
+        padding-bottom: 30%;
+        border-radius: 50%;
+        height: 0;
+        overflow: hidden;
+        
+        &:hover {
+            background-color: #d9d9d9;
+        }
+    }
+    
+    img {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        
+        @include media-down(sm) {
+            top: 35%;
+        }
+    }
+    
+    span {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        white-space: nowrap;
+        font-weight: 500;
+        
+        @include media-down(sm) {
+            top: 70%;
+            font-size: 14px;
+        }
+    }
+    
 }

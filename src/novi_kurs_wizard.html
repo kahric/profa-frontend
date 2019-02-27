@@ -232,7 +232,7 @@
 
     <!-- Main container -->
     <main class="main-container">
-        <header class="header mb-0">
+        <header class="header mb-0 d-none">
             <div class="header-info">
                 <div class="left">
                     <h2 class="header-title">Dodavanje <strong>novog kursa</strong></h2>
@@ -242,7 +242,7 @@
         <div class="main-content">
             <div class="card">
                 <div class="card-body">
-                    <form data-provide="wizard" novalidate="true" data-on-next="callbackOnNext" data-on-previous="callbackOnPrevious" data-on-finish="callbackOnFinish">
+                    <form data-provide="wizard" novalidate="true" class="wizard">
                         <ul class="nav nav-process nav-process-circle">
                             <li class="nav-item">
                                 <span class="nav-title">Info</span>
@@ -269,7 +269,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade active show" id="wizard-validate-1">
                                 <br><br>
-                                <p class="text-center fs-35 text-muted">Osnovne informacije o <strong class="text-primary">kursu</strong></p>
+                                <p class="text-center fs-35 text-muted">Unesite osnovne informacije o <strong class="text-primary">kursu</strong></p>
                                 <p class="text-center text-gray">Upišite razmuljivo ime za vaš kurs, cijenu, te izaberite sliku i kategoriju u koju će vaš novi kurs biti svrstan.</p>
                                 <hr class="w-100px">
                                 <br>
@@ -340,37 +340,32 @@
                                 <p class="text-center text-gray">Na Profa kursevima postoje 3 vrste pitanja, a to su: Standardni oblik pitanja sa više odgovora, pitanja u vidu dopunjavanja rečenice, i pitanja na princip spajanja tačnih odgovora.</p>
                                 <hr class="w-100px">
                                 <br>
-
-                                <div class="nav-tabs">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs nav-justified nav-tabs-primary">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#home-left">Pitanja</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#profile-left">Dopuni rečenicu</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#messages-left">Spojnice</a>
-                                        </li>
-                                    </ul>
-
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade active show" id="home-left">
-                                            Enthusiastically integrate business content for standardized partnerships. Intrinsicly envisioneer focused resources for flexible imperatives. Holisticly e-enable 2.0 infomediaries rather than user friendly resources. Holisticly enable bleeding-edge convergence whereas premium potentialities. Monotonectally myocardinate multimedia based deliverables vis-a-vis.
-                                        </div>
-                                        <div class="tab-pane fade" id="profile-left">
-                                            Quickly utilize synergistic deliverables via enabled synergy. Rapidiously create optimal solutions rather than 24/7 e-services. Continually reinvent performance based markets before open-source testing procedures. Dynamically fabricate process-centric content for cross functional relationships. Proactively build clicks-and-mortar interfaces.
-                                        </div>
-                                        <div class="tab-pane fade" id="messages-left">
-                                            Continually procrastinate one-to-one potentialities without market-driven schemas. Rapidiously coordinate impactful growth strategies and progressive functionalities. Holisticly deliver diverse technologies with frictionless web services. Authoritatively envisioneer technically sound growth strategies for goal-oriented portals. Appropriately empower bleeding-edge best.
-                                        </div>
-                                        <div class="tab-pane fade" id="settings-left">
-                                            Collaboratively engineer revolutionary ideas with emerging content. Objectively envisioneer installed base total linkage via mission-critical functionalities. Synergistically pursue alternative web-readiness via excellent technology. Globally reinvent effective infomediaries and cross functional users. Phosfluorescently repurpose reliable data through.
-                                        </div>
-                                    </div>
+                                <h3 class="text-center">Izaberite vrstu pitanja:</h3>
+                                <div class="wizard-vrste-pitanja">
+                                    <a href="#" data-vrsta="mcq">
+                                        <img src="/assets/img/test.png" alt="MCQ">
+                                        <span>
+                                            <span>Pitanje</span>
+                                        </span>
+                                    </a>
+                                    <a href="#" data-vrsta="spojnice">
+                                        <img src="/assets/img/connect.png" alt="Spojnice">
+                                        <span>
+                                            <span>Spajalice</span>
+                                        </span>
+                                    </a>
+                                    <a href="#" data-vrsta="dopuni">
+                                        <img src="/assets/img/document.png" alt="Dopunjavanje riječi">
+                                        <span>
+                                            <span>Dopuni riječ</span>
+                                        </span>
+                                    </a>
                                 </div>
+                                <br>
+                                <hr class="w-100px">
+                                <br>
+                                
+                                
                             </div>
 
 
@@ -561,19 +556,6 @@
 
         });
 
-        function callbackOnNext(tab, navigation, index) {
-            return false;
-        }
-
-
-        function callbackOnPrevious(tab, navigation, index) {
-            app.toast('Previous');
-        }
-
-
-        function callbackOnFinish(tab, navigation, index) {
-            app.toast('Finish');
-        }
 
     </script>
 </body>

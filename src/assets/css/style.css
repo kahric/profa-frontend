@@ -516,6 +516,7 @@ span.logo {
   transition: all 0.5s ease;
   opacity: 0;
   display: flex;
+  flex-direction: column;
 }
 
 .kurs-card:hover .card-hover {
@@ -627,6 +628,71 @@ span.logo {
 @media (max-width: 991px) {
   .topbar-btn.sidebar-toggler {
     color: #FFF !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .wizard p.text-center.text-gray {
+    padding: 0 15%;
+  }
+}
+
+.wizard-vrste-pitanja {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (min-width: 992px) {
+  .wizard-vrste-pitanja {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+
+.wizard-vrste-pitanja a {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  text-align: center;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  border-radius: 50%;
+  height: 0;
+  overflow: hidden;
+}
+
+.wizard-vrste-pitanja a:hover {
+  background-color: #d9d9d9;
+}
+
+.wizard-vrste-pitanja img {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+
+@media (max-width: 767px) {
+  .wizard-vrste-pitanja img {
+    top: 35%;
+  }
+}
+
+.wizard-vrste-pitanja span {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .wizard-vrste-pitanja span {
+    top: 70%;
+    font-size: 14px;
   }
 }
 
