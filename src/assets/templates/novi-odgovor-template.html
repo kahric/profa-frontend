@@ -1,0 +1,31 @@
+<script id="novi-odgovor-template" type="text/html">
+    <div class="row odgovor" data-odgovor-id="{{odgovor_id}}">
+        <div class="col-2 d-flex align-items-center justify-content-center" style="font-size: 18px; font-weight: 700;">#{{odgovor_id}}</div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="input-normal">Odgovor</label>
+                        <textarea name="pitanja[{{odgovor_id}}][tekst]" class="form-control" placeholder="Odgovor u tekstualnom obliku" cols="30"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group file-group">
+                        <label>Slikoviti odgovor (nije obavezan)</label>
+                        <input type="text" class="form-control file-value file-browser" placeholder="Pronađite sliku..." readonly>
+                        <input type="file" name="pitanja[{{odgovor_id}}][slika]">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group file-group">
+                        <label>Audio odgovor (nije obavezan)</label>
+                        <input type="text" class="form-control file-value file-browser" placeholder="Pronađite zvučni zapis..." readonly>
+                        <input type="file" name="pitanja[{{odgovor_id}}][zvuk]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+

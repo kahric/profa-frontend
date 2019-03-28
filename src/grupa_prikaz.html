@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+    <meta name="keywords" content="blank, starter">
+
+    <title>Grupa &mdash; Profa</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="assets/css/core.min.css" rel="stylesheet">
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-dots">
+            <span class="dot1"></span>
+            <span class="dot2"></span>
+            <span class="dot3"></span>
+        </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar sidebar-expand-lg sidebar-iconic">
+        <header class="sidebar-header">
+            <span class="logo">
+                <a href="../index.html"><img src="../assets/img/logo-light.png" alt="logo"></a>
+            </span>
+        </header>
+
+        <nav class="sidebar-navigation">
+
+            <div class="sidebar-profile">
+                <div class="dropdown">
+                    <span class="dropdown-toggle no-caret" data-toggle="dropdown"><img class="avatar" src="../assets/img/1.jpg" alt="..."></span>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"><i class="ti-user"></i> Profil</a>
+                        <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="ti-help"></i> Help</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="ti-power-off"></i> Logout</a>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <h4>Kenan Kahrić</h4>
+                    <p>IT Bachelor <br> Stručnost <br> Web development</p>
+                </div>
+            </div>
+
+            <ul class="menu">
+
+                <li class="menu-item d-lg-none">
+                    <a class="menu-link" href="#">
+                        <span class="icon fa fa-home"></span>
+                        <span class="title">Naslovna</span>
+                    </a>
+                </li>
+                <li class="menu-item d-lg-none">
+                    <a class="menu-link" href="#" data-toggle="quickview" data-target="#qv-notifications">
+                        <span class="icon fa fa-bell-o"></span>
+                        <span class="title">Notifikacije</span>
+                    </a>
+                </li>
+                <li class="menu-item d-lg-none">
+                    <a class="menu-link" href="#">
+                        <span class="icon fa fa-newspaper-o"></span>
+                        <span class="title">Novosti</span>
+                    </a>
+                </li>
+                <li class="menu-item d-lg-none">
+                    <a class="menu-link" href="#">
+                        <span class="icon fa fa-wrench"></span>
+                        <span class="title">Postavke</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="novi_kurs_wizard.html">
+                        <span class="icon fa fa-plus-circle"></span>
+                        <span class="title">Kreiraj kurs</span>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a class="menu-link" href="grupa_prikaz.html">
+                        <span class="icon fa fa-group"></span>
+                        <span class="title">Grupe</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="#">
+                        <span class="icon fa fa-check"></span>
+                        <span class="title">Izvještaj</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="#">
+                        <span class="icon fa fa-globe"></span>
+                        <span class="title">Plan aktivnosti</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="#">
+                        <span class="icon fa fa-trophy"></span>
+                        <span class="title">Tvoj napredak</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </aside>
+    <!-- END Sidebar -->
+
+
+    <!-- Topbar -->
+    <header class="topbar topbar-expand-lg">
+        <div class="topbar-left">
+            <button class="topbar-btn sidebar-toggler">&#9776;</button>
+            <div class="pretraga-panel" tabindex="-1">
+                <div class="lookup lookup-circle">
+                    <input type="text" id="pretraga_rijeci" maxlength="35" placeholder="Pretraga" autocomplete="off">
+                </div>
+                <div class="pretraga-popup">
+                    <div class="prazna-pretraga">
+                        <p class="m-0 fw-500">Pretražuj: </p>
+                        <div class="media-list media-list-hover media-list-divided search-media">
+                            <a class="media media-single" href="#">
+                                <span class="avatar avatar-sm bg-primary"><i class="fa fa-graduation-cap"></i></span>
+                                <span class="title">Kurseve</span>
+                            </a>
+                            <a class="media media-single" href="#">
+                                <span class="avatar avatar-sm bg-brown"><i class="fa fa-user"></i></span>
+                                <span class="title">Nastavnike</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pretraga-rezultati">
+                        <p class="m-0">Pronađeni kursevi za <span class="fw-500 pretraga_rijec"></span>:</p>
+                        <div class="media-list media-list-hover media-list-xs search-media search-media">
+                            <div class="media media-single">
+                                <span class="avatar avatar-sm bg-primary"><i class="fa fa-graduation-cap"></i></span>
+                                <span>Uvod u elektroniku</span>
+                            </div>
+                            <div class="media media-single">
+                                <span class="avatar avatar-sm bg-primary"><i class="fa fa-graduation-cap"></i></span>
+                                <span>Ekonomija u računarstvu</span>
+                            </div>
+                            <div class="media media-single">
+                                <span class="avatar avatar-sm bg-primary"><i class="fa fa-graduation-cap"></i></span>
+                                <span>Pisanje ćirilice</span>
+                            </div>
+                        </div>
+                        <p class="m-0">Pronađeni nastavnici za <span class="fw-500 pretraga_rijec"></span>:</p>
+                        <div class="media-list media-list-hover media-list-xs search-media search-media">
+                            <div class="media media-single">
+                                <img class="avatar avatar-sm" src="http://thetheme.io/theadmin/assets/img/avatar/1.jpg" alt="...">
+                                <span>Maryam Amiri</span>
+                            </div>
+                            <div class="media media-single">
+                                <img class="avatar avatar-sm" src="http://thetheme.io/theadmin/assets/img/avatar/2.jpg" alt="...">
+                                <span>Hossein Shams</span>
+                            </div>
+                            <div class="media media-single">
+                                <img class="avatar avatar-sm" src="http://thetheme.io/theadmin/assets/img/avatar/3.jpg" alt="...">
+                                <span>Sarah Conner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+            <nav class="topbar-navigation">
+                <ul class="menu">
+
+                    <li class="menu-item active">
+                        <a class="menu-link" href="#">
+                            <span class="title">Naslovna</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#" data-toggle="quickview" data-target="#qv-notifications">
+                            <span class="title">Notifikacije</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#">
+                            <span class="title">Novosti</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#">
+                            <span class="title">Kursevi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#">
+                            <span class="title">Postavke</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+        <div class="topbar-bottom">
+            <a href="#">
+                <span class="ikonica"><i class="fa fa-graduation-cap"></i></span>
+                <span class="opis">Radi kurs</span>
+            </a>
+            <a href="/novi_kurs_wizard.html">
+                <span class="ikonica"><i class="fa fa-plus-circle"></i></span>
+                <span class="opis">Kreiraj kurs</span>
+            </a>
+            <a href="#">
+                <span class="ikonica"><i class="fa fa-trophy"></i></span>
+                <span class="opis">Napredak</span>
+            </a>
+        </div>
+    </header>
+    <!-- END Topbar -->
+
+
+    <!-- Main container -->
+    <main class="main-container">
+        <!-- Page aside -->
+        <aside class="aside aside-lg aside-expand-md">
+
+            <ul class="nav nav-tabs nav-justified nav-tabs-info">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#tab-actions">Akcije</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab-contacts">Članovi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab-noti">Obavijesti</a>
+                </li>
+            </ul>
+
+            <div class="aside-body p-0">
+
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="tab-actions">
+                        <div class="media-list media-list-sm media-list-hover media-list-divided">
+                            <a class="media flex-column px-20" href="aside-email.html">
+                                <p>Kreirajte kurs za grupu</p>
+                                <small>Dopustite članovima grupe datestiraju svoje znanje</small>
+                            </a>
+
+                            <a class="media flex-column px-20" href="aside-form.html">
+                                <p>Izvještaj</p>
+                                <small>Detaljni izvještaj o članovima grupe</small>
+                            </a>
+
+                            <a class="media flex-column px-20" href="aside-messages.html">
+                                <p>Plan aktivnosti</p>
+                                <small>Kalendar i lista zadataka za članove grupe</small>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-contacts">
+                        <div class="media-list media-list-hover">
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/1.jpg" alt="...">
+                                <p class="title">Maryam Amiri</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/2.jpg" alt="...">
+                                <p class="title">Hossein Shams</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-secondary">LB</span>
+                                <p class="title">Luz Buchler</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/3.jpg" alt="...">
+                                <p class="title">Tim Hank</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-dark">KC</span>
+                                <p class="title">Karla Cardinal</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-brown">GS</span>
+                                <p class="title">Gena Stepney</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/4.jpg" alt="...">
+                                <p class="title">Frank Camly</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-pink">TH</span>
+                                <p class="title">Teisha Hummel</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/5.jpg" alt="...">
+                                <p class="title">Bobby Mincy</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/6.jpg" alt="...">
+                                <p class="title">Gary Camara</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-purple">PB</span>
+                                <p class="title">Pricilla Beaird</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-gray">VB</span>
+                                <p class="title">Vernice Begay</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-primary">LP</span>
+                                <p class="title">Luz Pintor</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/2.jpg" alt="...">
+                                <p class="title">Garret Gloss</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/3.jpg" alt="...">
+                                <p class="title">Fidel Tonn</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-info">ED</span>
+                                <p class="title">Eulah Deweese</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-success">ZS</span>
+                                <p class="title">Zora Sieber</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <img class="avatar avatar-sm" src="../assets/img/avatar/5.jpg" alt="...">
+                                <p class="title">Bobby Mincy</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-warning">EW</span>
+                                <p class="title">Emilia Weber</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="media items-center">
+                                <span class="avatar avatar-sm bg-danger">AW</span>
+                                <p class="title">Aja Weedon</p>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-phone"></i></a>
+                                <a class="media-action hover-primary" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-noti">
+                        <div class="media-list media-list-hover media-list-divided">
+                            <a class="media new" href="#">
+                                <span class="avatar bg-success"><i class="ti-user"></i></span>
+                                <div class="media-body">
+                                    <p>New user registered</p>
+                                    <time datetime="2018-07-14 20:00">Just now</time>
+                                </div>
+                            </a>
+
+                            <a class="media new" href="#">
+                                <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
+                                <div class="media-body">
+                                    <p>New order received</p>
+                                    <time datetime="2018-07-14 20:00">2 min ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media new" href="#">
+                                <span class="avatar bg-warning"><i class="ti-face-sad"></i></span>
+                                <div class="media-body">
+                                    <p>Refund request from <b>Ashlyn Culotta</b></p>
+                                    <time datetime="2018-07-14 20:00">24 min ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media new" href="#">
+                                <span class="avatar bg-primary"><i class="ti-money"></i></span>
+                                <div class="media-body">
+                                    <p>New payment has made through PayPal</p>
+                                    <time datetime="2018-07-14 20:00">53 min ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-danger"><i class="ti-package"></i></span>
+                                <div class="media-body">
+                                    <p>Package lost on the way!</p>
+                                    <time datetime="2018-07-14 20:00">1 hour ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-success"><i class="ti-user"></i></span>
+                                <div class="media-body">
+                                    <p>New user registered</p>
+                                    <time datetime="2018-07-14 20:00">1 hour ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-purple"><i class="ti-comment"></i></span>
+                                <div class="media-body">
+                                    <p>New review on <em>iPhone 6s</em></p>
+                                    <time datetime="2018-07-14 20:00">3 hours ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
+                                <div class="media-body">
+                                    <p>New order received</p>
+                                    <time datetime="2018-07-14 20:00">5 hours ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-danger"><i class="fa fa-area-chart"></i></span>
+                                <div class="media-body">
+                                    <p>CPU usage went above 80%</p>
+                                    <time datetime="2018-07-14 20:00">Yesterday</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-yellow"><i class="fa fa-star"></i></span>
+                                <div class="media-body">
+                                    <p>New rating on iPhone 6s, 5 star</p>
+                                    <time datetime="2018-07-14 20:00">Yesterday</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-success"><i class="ti-user"></i></span>
+                                <div class="media-body">
+                                    <p>New user registered</p>
+                                    <time datetime="2018-07-14 20:00">Yesterday</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-primary"><i class="ti-money"></i></span>
+                                <div class="media-body">
+                                    <p>New payment has made through PayPal</p>
+                                    <time datetime="2018-07-14 20:00">2 days ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
+                                <div class="media-body">
+                                    <p>New order received</p>
+                                    <time datetime="2018-07-14 20:00">2 days ago</time>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-purple"><i class="ti-comment"></i></span>
+                                <div class="media-body">
+                                    <p>New review on Samsung Galaxy S7</p>
+                                    <time datetime="2018-07-14 20:00">Aug 17</time>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <button class="aside-toggler"></button>
+        </aside>
+        <!-- END Page aside -->
+        <header class="header no-border">
+            <div class="header-info">
+                <h2 class="header-title"><strong>Pregled</strong> grupe <small class="subtitle">Na ovoj stranici možete pronaći sve informacije vezane za grupu u kojoj se trenutno nalazite</small></h2>
+            </div>
+        </header>
+        <div class="main-content pt-0">
+            <div class="card">
+               <h4 class="card-header">Napišite novu objavu u grupu</h4>
+                <div class="card-body">
+                    <div class="publisher publisher-multi">
+                        <textarea class="publisher-input" rows="3" placeholder="Napišite nešto..."></textarea>
+                        <div class="flexbox">
+                            <div class="gap-items">
+                                <span class="publisher-btn file-group">
+                                    <i class="fa fa-paperclip file-browser"></i>
+                                    <input type="file">
+                                </span>
+                                <a class="publisher-btn" href="#"><i class="fa fa-photo"></i></a>
+                                <a class="publisher-btn" href="#"><i class="fa fa-smile-o"></i></a>
+                            </div>
+
+                            <button class="btn btn-sm btn-bold btn-primary">Objavi u grupu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media bb-1 border-fade">
+                    <img class="avatar avatar-lg" src="http://thetheme.io/theadmin/assets/img/avatar/1.jpg" alt="...">
+                    <div class="media-body">
+                        <p>
+                            <strong class="fs-14">Maryam Amiri</strong>
+                            <time class="float-right text-lighter" datetime="2018">24 min ago</time>
+                        </p>
+                        <p><small>Designer</small></p>
+                    </div>
+                </div>
+
+                <div class="card-body bb-1 border-fade">
+                    <p class="lead">Authoritatively syndicate goal-oriented leadership skills for clicks-and-mortar outsourcing. Synergistically reconceptualize enabled catalysts for change.</p>
+
+                    <div class="gap-items-4 mt-12">
+                        <a class="text-lighter hover-light" href="#">
+                            <i class="fa fa-thumbs-up mr-1"></i> 196
+                        </a>
+                        <a class="text-lighter hover-light" href="#">
+                            <i class="fa fa-comment mr-1"></i> 24
+                        </a>
+                        <a class="text-lighter hover-light" href="#">
+                            <i class="fa fa-share-alt mr-1"></i> 3
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="media-list media-list-divided bg-lighter">
+                    <div class="media">
+                        <a class="avatar" href="#">
+                            <img src="http://thetheme.io/theadmin/assets/img/avatar/4.jpg" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <p>
+                                <a href="#"><strong>Frank Camley</strong></a>
+                                <time class="float-right text-fade" datetime="2018-07-14 20:00">Just now</time>
+                            </p>
+                            <p>Uniquely enhance world-class channels with just in time schemas.</p>
+
+                            <div class="media px-0">
+                                <a class="avatar" href="#">
+                                    <img src="http://thetheme.io/theadmin/assets/img/avatar/1.jpg" alt="...">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#"><strong>Maryam Amiri</strong></a>
+                                        <time class="float-right text-fade" datetime="2018-07-14 20:00">26 mins ago</time>
+                                    </p>
+                                    <p>Thank you for your nice comment.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="media">
+                        <a class="avatar" href="#">
+                            <img src="http://thetheme.io/theadmin/assets/img/avatar/5.jpg" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <p>
+                                <a href="#"><strong>Tim Hank</strong></a>
+                                <time class="float-right text-fade" datetime="2018-07-14 20:00">2 hours ago</time>
+                            </p>
+                            <p>Continually drive user friendly solutions through performance based infomediaries.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <form class="publisher bt-1 border-fade bg-white">
+                    <img class="avatar avatar-sm" src="http://thetheme.io/theadmin/assets/img/avatar/2.jpg" alt="...">
+                    <input class="publisher-input" type="text" placeholder="Add Your Comment">
+                    <a class="publisher-btn" href="#"><i class="fa fa-smile-o"></i></a>
+                    <span class="publisher-btn file-group">
+                        <i class="fa fa-camera file-browser"></i>
+                        <input type="file">
+                    </span>
+                </form>
+
+            </div>
+            <div class="card">
+                <div class="media bb-1 border-fade">
+                    <img class="avatar avatar-lg" src="http://thetheme.io/theadmin/assets/img/avatar/1.jpg" alt="...">
+                    <div class="media-body">
+                        <p>
+                            <strong class="fs-14">Maryam Amiri</strong>
+                            <time class="float-right text-lighter" datetime="2018">24 min ago</time>
+                        </p>
+                        <p><small>Designer</small></p>
+                    </div>
+                </div>
+
+
+
+                <div class="card-body">
+                    <p class="lead">Check this out. It is the next big thing!!</p>
+                </div>
+
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.youtube.com/embed/M5S_JBRjd1s" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+
+                <form class="publisher bg-transparent bt-1 border-fade">
+                    <img class="avatar avatar-sm" src="http://thetheme.io/theadmin/assets/img/avatar/2.jpg" alt="...">
+                    <input class="publisher-input" type="text" placeholder="Add Comment">
+                    <a class="publisher-btn" href="#"><i class="fa fa-smile-o"></i></a>
+                    <span class="publisher-btn file-group">
+                        <i class="fa fa-camera file-browser"></i>
+                        <input type="file">
+                    </span>
+                </form>
+
+            </div>
+
+
+        </div>
+        <!--/.main-content -->
+
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center text-md-left">Copyright © 2019 <a href="#">Profa</a>. Sva prava pridržana.</p>
+                </div>
+
+                <div class="col-md-6">
+                    <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pomoć</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- END Footer -->
+
+    </main>
+    <!-- END Main container -->
+
+
+
+    <!-- Global quickview -->
+    <div id="qv-global" class="quickview" data-url="assets/data/quickview-global.html">
+        <div class="spinner-linear">
+            <div class="line"></div>
+        </div>
+    </div>
+    <!-- END Global quickview -->
+
+    <!-- Notifications quickview -->
+    <div id="qv-notifications" class="quickview backdrop-light">
+        <header class="quickview-header">
+            <p class="quickview-title lead">Obavijesti</p>
+            <span class="close"><i class="ti-close"></i></span>
+        </header>
+
+        <div class="quickview-body">
+            <div class="media-list media-list-hover media-list-divided media-sm">
+                <a class="media media-new" href="#">
+                    <span class="avatar bg-success"><i class="ti-user"></i></span>
+                    <div class="media-body">
+                        <p>New user registered</p>
+                        <time datetime="2018-07-14 20:00">Just now</time>
+                    </div>
+                </a>
+
+                <a class="media media-new" href="#">
+                    <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
+                    <div class="media-body">
+                        <p>New order received</p>
+                        <time datetime="2018-07-14 20:00">2 min ago</time>
+                    </div>
+                </a>
+
+                <a class="media media-new" href="#">
+                    <span class="avatar bg-warning"><i class="ti-face-sad"></i></span>
+                    <div class="media-body">
+                        <p>Refund request from <b>Ashlyn Culotta</b></p>
+                        <time datetime="2018-07-14 20:00">24 min ago</time>
+                    </div>
+                </a>
+
+                <a class="media media-new" href="#">
+                    <span class="avatar bg-primary"><i class="ti-money"></i></span>
+                    <div class="media-body">
+                        <p>New payment has made through PayPal</p>
+                        <time datetime="2018-07-14 20:00">53 min ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-danger"><i class="ti-package"></i></span>
+                    <div class="media-body">
+                        <p>Package lost on the way!</p>
+                        <time datetime="2018-07-14 20:00">1 hour ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-success"><i class="ti-user"></i></span>
+                    <div class="media-body">
+                        <p>New user registered</p>
+                        <time datetime="2018-07-14 20:00">1 hour ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-purple"><i class="ti-comment"></i></span>
+                    <div class="media-body">
+                        <p>New review on <em>iPhone 6s</em></p>
+                        <time datetime="2018-07-14 20:00">3 hours ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
+                    <div class="media-body">
+                        <p>New order received</p>
+                        <time datetime="2018-07-14 20:00">5 hours ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-danger"><i class="fa fa-area-chart"></i></span>
+                    <div class="media-body">
+                        <p>CPU usage went above 80%</p>
+                        <time datetime="2018-07-14 20:00">Yesterday</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-yellow"><i class="fa fa-star"></i></span>
+                    <div class="media-body">
+                        <p>New rating on iPhone 6s, 5 star</p>
+                        <time datetime="2018-07-14 20:00">Yesterday</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-success"><i class="ti-user"></i></span>
+                    <div class="media-body">
+                        <p>New user registered</p>
+                        <time datetime="2018-07-14 20:00">Yesterday</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-primary"><i class="ti-money"></i></span>
+                    <div class="media-body">
+                        <p>New payment has made through PayPal</p>
+                        <time datetime="2018-07-14 20:00">2 days ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
+                    <div class="media-body">
+                        <p>New order received</p>
+                        <time datetime="2018-07-14 20:00">2 days ago</time>
+                    </div>
+                </a>
+
+                <a class="media" href="#">
+                    <span class="avatar bg-purple"><i class="ti-comment"></i></span>
+                    <div class="media-body">
+                        <p>New review on Samsung Galaxy S7</p>
+                        <time datetime="2018-07-14 20:00">Aug 17</time>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer class="quickview-footer flexbox">
+            <div>
+                <a href="#">View full archive</a>
+            </div>
+            <div>
+                <a href="#" data-provide="tooltip" title="Mark all as read"><i class="fa fa-circle-o"></i></a>
+                <a href="#" data-provide="tooltip" title="Update"><i class="fa fa-repeat"></i></a>
+                <a href="#" data-provide="tooltip" title="Settings"><i class="fa fa-gear"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- END Notifications quickview -->
+
+
+
+    <!-- Scripts -->
+    <script src="assets/js/core.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

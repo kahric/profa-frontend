@@ -696,4 +696,104 @@ span.logo {
   }
 }
 
+.odgovor {
+  background-color: #efefef;
+  padding: 20px 0;
+  margin: 20px;
+}
+
+.spojnica {
+  margin-bottom: 20px;
+}
+
+.kurs-flashcard {
+  font-size: 20px;
+  padding: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  line-height: 120%;
+  text-align: center;
+  background-color: #FFF;
+}
+
+@media (min-width: 992px) {
+  .kurs-flashcard {
+    padding: 100px 150px;
+    font-size: 26px;
+    margin-bottom: 50px;
+  }
+}
+
+.kviz .card-header span strong {
+  display: inline-block;
+  background-color: #ffd2dc;
+  color: #000;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.kviz .custom-control {
+  margin-bottom: 30px;
+}
+
+.kartica-container {
+  width: 100%;
+  height: 260px;
+  position: relative;
+  border: 1px solid #ccc;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.kartica {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.kartica div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.kartica .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.kartica.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
 /*# sourceMappingURL=style.css.map */

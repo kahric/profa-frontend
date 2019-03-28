@@ -305,34 +305,20 @@
                                 </div>
                             </div>
 
-
-
                             <div class="tab-pane fade" id="wizard-validate-2">
                                 <br><br>
                                 <p class="text-center fs-35 text-muted">Dodajte <strong class="text-primary">teorijske kartice</strong> za učenje</p>
                                 <p class="text-center text-gray">Koristeći kartice, pratitelji kursa će na brz i jednostavan način moći upamtiti teoriju vezanu za vaš kurs. Broj kartica nije ograničen, te je preporučljivo da ih dodate što više moguće, kako bi sve oblasti u kursu bile teoretski pokrivene.</p>
                                 <hr class="w-100px">
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#card-modal">Nova kartica</a>
+                                </div>
                                 <br>
 
                                 <div class="row" id="kartice-row">
-                                    <div class="col-xl-3 d-flex align-items-stretch" data-toggle="modal" data-target="#card-modal">
-                                        <div class="card card-bordered novi-kurs-card w-100">
-                                            <div class="card-body text-center d-flex align-items-center justify-content-center">
-                                                <div>
-                                                    <p class="m-0 mb-1 pt-3 fs-30 card-content font-weight-bold">
-                                                        <i class="fa fa-plus-circle"></i>
-                                                    </p>
-                                                    <p class="m-0 pb-3 card-content font-weight-bold">
-                                                        Nova kartica
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
-
-
 
                             <div class="tab-pane fade" id="wizard-validate-3" data-provide="validation">
                                 <br><br>
@@ -342,19 +328,19 @@
                                 <br>
                                 <h3 class="text-center">Izaberite vrstu pitanja:</h3>
                                 <div class="wizard-vrste-pitanja">
-                                    <a href="#" data-vrsta="mcq">
+                                    <a href="#" data-vrsta="mcq" data-toggle="modal" data-target="#pitanja-modal">
                                         <img src="/assets/img/test.png" alt="MCQ">
                                         <span>
                                             <span>Pitanje</span>
                                         </span>
                                     </a>
-                                    <a href="#" data-vrsta="spojnice">
+                                    <a href="#" data-vrsta="spojnice" data-toggle="modal" data-target="#pitanja-modal">
                                         <img src="/assets/img/connect.png" alt="Spojnice">
                                         <span>
-                                            <span>Spajalice</span>
+                                            <span>Spojnice</span>
                                         </span>
                                     </a>
-                                    <a href="#" data-vrsta="dopuni">
+                                    <a href="#" data-vrsta="dopuni" data-toggle="modal" data-target="#pitanja-modal">
                                         <img src="/assets/img/document.png" alt="Dopunjavanje riječi">
                                         <span>
                                             <span>Dopuni riječ</span>
@@ -363,34 +349,33 @@
                                 </div>
                                 <br>
                                 <hr class="w-100px">
+
+
+
                                 <br>
-                                
-                                
+
+
                             </div>
-
-
-
                             <div class="tab-pane fade" id="wizard-validate-4">
                                 <br><br>
-                                <p class="text-center fs-35 text-muted">Ready to <strong class="text-primary">go?</strong></p>
-                                <p class="text-center text-gray">Rapidiously facilitate web-enabled products through innovative collaboration.</p>
+                                <p class="text-center fs-35 text-muted">Kurs je <strong class="text-primary">spreman!</strong></p>
+                                <p class="text-center text-gray">Uspješno ste dodali teorijske kartice te pitanja za Vaš kurs. Nakon klika na dugme "Spremi kurs", sa vašeg konta će se oduzeti 50 Profa Novčića i kurs će biti dodan u naš listing kurseva.</p>
                                 <hr class="w-100px">
                                 <br>
-
                                 <div class="px-20">
                                     <div class="form-group row">
-                                        <label class="col-form-label col-sm-4">Username</label>
-                                        <div class="form-control-plaintext col-sm-8">TheAdmin</div>
+                                        <label class="col-form-label col-sm-4">Naziv kursa</label>
+                                        <div class="form-control-plaintext col-sm-8">Kako napraviti Wordpress web stranicu?</div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-form-label col-sm-4">Email</label>
-                                        <div class="form-control-plaintext col-sm-8">support@theadmin.io</div>
+                                        <label class="col-form-label col-sm-4">Cijena</label>
+                                        <div class="form-control-plaintext col-sm-8">50 <i class="fa fa-diamond"></i></div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-form-label col-sm-4">Card number</label>
-                                        <div class="form-control-plaintext col-sm-8">xxxx-xxxx-xxxx-3648</div>
+                                        <label class="col-form-label col-sm-4">Kategorija</label>
+                                        <div class="form-control-plaintext col-sm-8">Informatika</div>
                                     </div>
                                 </div>
 
@@ -455,13 +440,17 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="card-modal-label">Dodavanje novu kartice</h4>
+                    <h4 class="modal-title" id="card-modal-label">Dodavanje nove kartice</h4>
                     <button type="button" class="close" data-dismiss="modal">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <textarea id="card-modal-text" cols="30" rows="6" class="form-control" placeholder="U ovo polje upisujete sadržaj jedne kartice. Sadržaj kartice bi trebao da se sastoji od  najmanje dvije rečenice sa fokusom na određeni dio oblasti." style="font-size: 16px;"></textarea>
+                    <h5>Prednja strana kartice: </h5>
+                    <textarea id="card-modal-front" cols="30" rows="6" class="card-modal-editor" placeholder="U ovo polje upisujete sadržaj jedne kartice. Sadržaj kartice bi trebao da se sastoji od  najmanje dvije rečenice sa fokusom na određeni dio oblasti." style="font-size: 16px;"></textarea>
+                    <hr>
+                    <h5>Stražnja strana kartice: </h5>
+                    <textarea id="card-modal-back" cols="30" rows="6" class="card-modal-editor" placeholder="U ovo polje upisujete sadržaj jedne kartice. Sadržaj kartice bi trebao da se sastoji od  najmanje dvije rečenice sa fokusom na određeni dio oblasti." style="font-size: 16px;"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Zatvori</button>
@@ -472,6 +461,128 @@
     </div>
     <!-- END Kartice modal -->
 
+    <!-- Pitanja modal -->
+    <div class="modal fade" id="pitanja-modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <form id="pitanje_forma" class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="card-modal-label">Dodavanje novog pitanja</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="input-normal">Pitanje</label>
+                        <textarea class="form-control" id="pitanje-modal-mcq-naslov" placeholder="Tekstualni sadržaj pitanja"></textarea>
+                    </div>
+                    <div class="mcq-grupa modal-grupa">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group file-group">
+                                    <label>Slika pitanja (nije obavezna)</label>
+                                    <input type="text" class="form-control file-value file-browser" placeholder="Pronađite sliku..." readonly>
+                                    <input type="file" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group file-group">
+                                    <label>Audio pitanja (nije obavezan)</label>
+                                    <input type="text" class="form-control file-value file-browser" placeholder="Pronađite zvučni zapis..." readonly>
+                                    <input type="file" required>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Odgovori na pitanja (<span id="questions_num">0</span>/4)</label>
+                            </div>
+                            <div class="col-12" id="mcq_odgovori">
+
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary" id="mcq_dodaj_odgovor">Dodaj odgovor</button>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="textarea">Kratko obrazloženje</label>
+                            <textarea id="pitanje-opis" cols="30" rows="4" class="form-control" placeholder="Napišite kratko objašnjenje za ovo pitanje, tekst koji će se pokazati nakon što korisnik pogrešno odgovori na pitanje."></textarea>
+                        </div>
+                    </div>
+                    <div class="spojnice-grupa modal-grupa">
+                       <hr>
+                        <p>Za dodavanje spojnica, u prvo polje (Termin 1) upišite željeni pojam, a u iduće polje unesite povezani pojam.</p>
+                        <div class="row">
+                            <div class="col-12" id="modal_spojnice">
+                                <div class="spojnica">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label>Termin 1:</label>
+                                            <input type="text" name="spojnice[1][termin_1]" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Termin 2:</label>
+                                            <input type="text" name="spojnice[1][termin_2]" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spojnica">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label>Termin 1:</label>
+                                            <input type="text" name="spojnice[2][termin_1]" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Termin 2:</label>
+                                            <input type="text" name="spojnice[2][termin_2]" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spojnica">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label>Termin 1:</label>
+                                            <input type="text" name="spojnice[3][termin_1]" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Termin 2:</label>
+                                            <input type="text" name="spojnice[3][termin_2]" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spojnica">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label>Termin 1:</label>
+                                            <input type="text" name="spojnice[4][termin_1]" class="form-control">
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Termin 2:</label>
+                                            <input type="text" name="spojnice[4][termin_2]" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" id="dodaj_spojnicu">Nova spojnica</button>
+                    </div>
+                    <div class="dopuni-grupa modal-grupa">
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-bold btn-secondary" data-dismiss="modal">Zatvori</button>
+                    <button type="button" class="btn btn-bold btn-primary" id="card-modal-button" data-action="add">Dodaj pitanje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END Pitanja modal -->
+
 
 
     <!-- Scripts -->
@@ -481,9 +592,77 @@
     <script src="assets/vendor/mustache/mustache.min.js"></script>
     <script src="assets/vendor/mustache/jquery.mustache.js"></script>
     <script src="assets/vendor/jquery-confirm/jquery-confirm.min.js"></script>
+
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+
     <script src="assets/js/custom.js"></script>
 
     <script>
+        $(document).ready(function() {
+
+            $("#kartice-row").on("mouseover mouseout", ".kartica-container", function() {
+                $(this).find('.kartica').toggleClass('flipped');
+            });
+
+            var frontHeight = $('.front').outerHeight();
+            var backHeight = $('.back').outerHeight();
+
+            if (frontHeight > backHeight) {
+                $('.flip, .back').height(frontHeight);
+            } else if (frontHeight > backHeight) {
+                $('.flip, .front').height(backHeight);
+            } else {
+                $('.flip').height(backHeight);
+            }
+
+            var odgovor_id = 1;
+            $("#mcq_dodaj_odgovor").click(function() {
+                if (odgovor_id > 4) {
+                    return;
+                }
+                var viewData = {
+                    odgovor_id: odgovor_id
+                };
+
+                $("#questions_num").text(odgovor_id);
+
+                $.Mustache.load('./assets/templates/novi-odgovor-template.html').done(function() {
+                    $('#mcq_odgovori').mustache('novi-odgovor-template', viewData);
+                });
+                odgovor_id += 1;
+            });
+
+            var id_spojnice = 5;
+            $("#dodaj_spojnicu").click(function() {
+                if (odgovor_id > 32) {
+                    return;
+                }
+                var viewData = {
+                    id_spojnice: id_spojnice
+                };
+
+                $.Mustache.load('./assets/templates/nova-spojnica-template.html').done(function() {
+                    $('#modal_spojnice').mustache('nova-spojnica-template', viewData);
+                });
+                odgovor_id += 1;
+            });
+
+
+            tinymce.init({
+                selector: ".card-modal-editor",
+                language: "bs",
+                plugins: [
+                    "leaui_formula",
+                    "advlist autolink link lists charmap  hr anchor pagebreak",
+                    "directionality textcolor paste textcolor"
+                ],
+                paste_data_images: true,
+                toolbar1: "leaui_formula | bold italic underline strikethrough",
+                menubar: false,
+                statusbar: false,
+            });
+        });
+
         var lang = {
             modal_edit_naslov: "Izmjena postojeće kartice",
             modal_edit_dugme: "Izmjeni karticu",
@@ -510,8 +689,8 @@
                     odustani: function() {}
                 }
             });
-
         });
+
         $(document.body).on('click', '.edit_card', function(e) {
             var card_id = $(this).data('id');
             var content = $("div[data-card-id=" + card_id + "] .card-content").text();
@@ -531,8 +710,27 @@
             $("#card-modal-button").removeAttr('data-id')
         });
 
+        $("#pitanja-modal").on('show.bs.modal', function(e) {
+            var kliknuta_vrsta = $(e.relatedTarget).data('vrsta');
+            prikazi_modal_grupu(kliknuta_vrsta);
+            switch (kliknuta_vrsta) {
+                case 'mcq':
+
+                    break;
+
+                case 'spojnice':
+                    console.log(2);
+                    break;
+
+                case 'dopuni':
+                    console.log(3);
+                    break;
+            }
+        });
+
         $("#card-modal-button").click(function() {
-            var content = $("#card-modal-text").val();
+            var content_front = tinymce.editors[0].getContent()
+            var content_back = tinymce.editors[1].getContent()
             var action = $(this).data('action');
             if (action === 'edit') {
                 var card_id = $(this).data('id');
@@ -541,21 +739,28 @@
             } else {
                 new_id += 1;
                 var viewData = {
-                    content: content,
+                    content_front: content_front,
+                    content_back: content_back,
                     card_id: new_id
                 };
-                if (content === '') {
-                    $.alert('Molimo Vas da unesete sadržaj kartice.');
+                if (content_front === '' || content_back === '') {
+                    $.alert('Molimo Vas da popunite i prednju i zadnju stranu kartice.');
                 } else {
+                    // OVDJE NAPRAVITI AJAX REQUEST DA POSTA KARTICU I KAD SE POSTA KARTICA IZVRSITI KOD ISPOD
                     $.Mustache.load('./assets/templates/nova-kartica-template.htm').done(function() {
                         $('#kartice-row').mustache('kartica-template', viewData);
                     });
+                    tinymce.editors[0].setContent('');
+                    tinymce.editors[1].setContent('');
                     $("#card-modal").modal('hide');
                 }
             }
-
         });
 
+        function prikazi_modal_grupu(vrsta) {
+            $(".modal-grupa").hide();
+            $("." + vrsta + "-grupa").show();
+        }
 
     </script>
 </body>
